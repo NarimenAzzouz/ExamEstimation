@@ -1,0 +1,29 @@
+<h4>Pour estimer le cout de votre annonce ,
+    veuillez saisir la position soutaitée de 
+   votre annonce(haut,bas) et le nombre de la caractére de description</h4>
+   <h6>Notez bien les 2 champs sont obligatoires</h6>
+
+   <form (ngSubmit)="onSubmit()">
+       <div class="form_group">
+           <label>Position Souhaite:</label>
+           <select class="form-control" id="position" [(ngModel)]="annonce.position" name="position" required #n="ngModel">
+             <option value="parc">vide</option>
+             <option value="conduite">haut</option>
+             <option value="code">bas</option>
+           </select>
+           <div *ngIf="n.invalid && (n.dirty || n.touched)">
+               <div *ngIf="n.errors?.['required']">la position est obligatoire</div>
+             </div>
+         </div>
+         <div class="form-group">
+           <label >Description</label>
+           <input type="text" class="form-control"  name="description" [(ngModel)]="annonce.description" #d="ngModel" maxlength="60" required>
+           <div *ngIf="d.invalid && (d.dirty || d.touched)">
+               <div *ngIf="d.errors?.['maxlength']">le nombre de caractérer ne doit pas passer 60</div>
+           </div>
+         </div>
+       <button class="btn btn-success" type="submit"><i class="fa fa-save"></i> Estimer</button>&nbsp;
+       <div *ngIf="estimationMessage" class="estimation-message">
+         {{ estimationMessage }}
+       </div>
+       

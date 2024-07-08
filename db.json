@@ -1,0 +1,22 @@
+{
+  "annonce": [
+    {
+    "titre":"string",
+    "description":"string",
+    "position":"string",
+    "etat":"annule"
+    },
+    {
+      "titre":"hello",
+      "description":"hello",
+      "position":"hello",
+      "etat":"confirme"
+      },
+      {
+        "titre":"non",
+        "description":"non",
+        "position":"non",
+        "etat":"en attente"
+        }
+  ]
+}

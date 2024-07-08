@@ -1,0 +1,7 @@
+<div  *ngFor="let a of listAnnonce">
+    <table class="table" border="2" *ngIf="a.etat != 'annule'"
+           [ngStyle]="{'background-color':a.etat === 'confirme'? 'green': 'orange'}">
+      <tr><td>Titre:</td><td>{{a.titre}}</td></tr>
+      <tr><td>Description:</td><td>{{a.description}}</td></tr>
+    </table>
+  </div>
